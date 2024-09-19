@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>download</title>
+    <script src="https://kit.fontawesome.com/040dcc71c9.js" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            background-color: #000; 
+        }
+        .container-1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 50vh;
+            margin-top: 100px;
+
+        }
+        .container-1 button{
+            border:none;
+            outline: none;
+            background-color: yellow;
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container-2 #ftbtn, .container-2 #sbtn{
+            margin-top: 10px;
+            display: none; 
+
+
+        }
+        .container-2 a{
+            text-decoration: none;
+            display: block;
+        }
+        .container-2 button #style{
+            padding: 0 10px;
+        }
+        .container{
+            position: relative;
+            
+        }
+        .container p{
+            position: absolute;
+            color:white;
+            left:35%;
+            top:25%;
+        }
+        @media screen and (min-width:992px){
+            .container{
+            position: relative;
+            
+        }
+        .container p{
+            position: absolute;
+            color:white;
+            left:46%;
+            top:25%;
+        }
+
+        }
+       
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="timer"></p>
+        <div class="container-1">
+            <a href="#">
+                <button id="btn" onclick="clicked()">Generate Link</button>
+            </a>
+            <div class="container-2">
+                <a href="Master - Official Teaser _ Thalapathy Vijay _ Anirudh Ravichander _ Lokesh Kanagaraj.mp4"><button id="ftbtn"><i id="style" class="fa-solid fa-cloud-arrow-down"></i>Server -Venus</button></a>
+                <a href="Master - Official Teaser _ Thalapathy Vijay _ Anirudh Ravichander _ Lokesh Kanagaraj.mp4"><button  id="sbtn"><i id="style" class="fa-solid fa-cloud-arrow-down"></i>Server - Earth</button></a>
+            </div> 
+        </div>
+        
+    </div>
+    <script>
+       
+        function clicked(){
+            let count=30;
+            let btn = document.getElementById("btn");
+            let ftbtn = document.getElementById("ftbtn");
+            let sbtn = document.getElementById("sbtn");
+            let timer = document.getElementById("timer")
+            timer.innerText="30 Seconds";
+            timer.style.fontSize="25px"
+            let id;
+            id=setInterval(function(){
+               
+                count--;
+               
+                if(count<=0){
+                    timer.style.display="none";
+                    clearInterval(id);
+                    ftbtn.style.display="block";
+                    sbtn.style.display="block";
+
+                }
+                
+                else {
+                    btn.style.display="none";
+                    timer.innerText=`${count} Seconds`;
+                    
+                    
+                }         
+               
+            },1000)
+             
+        }
+        
+
+    </script>
+</body>
+</html>
